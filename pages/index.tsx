@@ -17,7 +17,7 @@ const Home: NextPage = () => {
           onClick={() => router.push(`/mint`)}
         >
           {/* Mint a new NFT */}
-          <Image src="/icons/cz.webp" alt="cz" width={64} height={64} />
+          <Image src="/icons/CZ.webp" alt="cz" width={64} height={64} />
           <h2 className={styles.selectBoxTitle}>Mint a new NFT</h2>
           <p className={styles.selectBoxDescription}>
             Claim Your CZ NFT HERE
