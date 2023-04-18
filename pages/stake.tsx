@@ -3,10 +3,12 @@ import {
   ThirdwebNftMedia,
   useAddress,
   useContract,
+  useNFT,
   useContractRead,
   useOwnedNFTs,
   useTokenBalance,
   Web3Button,
+  
 } from "@thirdweb-dev/react";
 import { BigNumber, ethers } from "ethers";
 import type { NextPage } from "next";
@@ -19,6 +21,13 @@ import {
 } from "../consts/contractAddresses";
 import styles from "../styles/Home.module.css";
 
+function App() {
+  return (
+    <ConnectWallet
+      className="my-custom-class"
+    />
+  );
+}
 const Stake: NextPage = () => {
   const address = useAddress();
   const { contract: nftDropContract } = useContract(
@@ -69,7 +78,7 @@ const Stake: NextPage = () => {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.h1}>Stake Your CZ NFTs</h1>
+      <h1 className={styles.h1}>Stake Your NFTs</h1>
       <hr className={`${styles.divider} ${styles.spacerTop}`} />
 
       {!address ? (
@@ -117,6 +126,8 @@ const Stake: NextPage = () => {
           </div>
 
           <hr className={`${styles.divider} ${styles.spacerTop}`} />
+
+
           <h2>Your Unstaked NFTs</h2>
           <div className={styles.nftBoxGrid}>
             {ownedNfts?.map((nft) => (
@@ -140,5 +151,9 @@ const Stake: NextPage = () => {
     </div>
   );
 };
+
+
+
+
 
 export default Stake;
